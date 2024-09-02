@@ -21,3 +21,10 @@ npm install
 npm run serve
 ```
 
+* vue
+  * 发送消息：sendMessage
+  * 接收消息：receiveMessage
+
+* ue（源码在ue程序里的NewBlueprint蓝图类）
+  * 发送消息：send pixel streaming response
+  * 接收消息：add pixel streaming input
