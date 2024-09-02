@@ -1,5 +1,5 @@
 # peer-stream-vue
-vue与ue的像素流交互
+vue与UE5 Pixel Streaming的像素流交互
 
 peer-stream作者 [peer-stream](https://github.com/inveta/peer-stream)
 
