@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>云渲染</title>
+  <script src="http://127.0.0.1:88/peer-stream.js"></script>
+</head>
+<body>
+  <textarea id="messageInput" placeholder="请输入要发送的信息"></textarea>
+  <button id="sendButton">确认</button>
+  <textarea id="readOnlyInput" placeholder="收到的信息"></textarea>
+
+  <video is="peer-stream" id="ws://127.0.0.1:88/" autoplay muted></video>
+
+
+  <script>
+    const ps = document.querySelector("video");
+    const messageInput = document.querySelector("#messageInput");
+    const sendButton = document.querySelector("#sendButton");
+
+    sendButton.addEventListener("click", () => {
+      ps.emitMessage(messageInput.value);
+      // messageInput.value = "";
+    });
+
+    ps.addEventListener("message", e => {
+      console.log("收到消息：", e);
+      let str = JSON.parse(e.detail);
+      readOnlyInput.value = str.jsonContent;
+    });
+  </script>
+</body>
+</html>
